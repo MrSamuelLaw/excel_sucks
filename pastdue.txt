@@ -1,0 +1,12 @@
+=IFS(
+    OR(
+        INDIRECT(CONCAT("B",ROW()))="Paid",
+        INDIRECT(CONCAT("B",ROW()))="Consultation Only"
+        ),
+    "",
+    AND(
+        LEN(INDIRECT(CONCAT("H",ROW()))),
+        INDIRECT(CONCAT("H",ROW()))<=TODAY()),
+    "!",
+    1,
+    "")

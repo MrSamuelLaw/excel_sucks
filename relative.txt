@@ -1,0 +1,13 @@
+=IFS(
+    OR(
+        B4="Paid",
+        B4="Consultation Only"
+        ),
+    "",
+    AND(
+        LEN(H4),
+        H4<=TODAY()
+        ),
+    "!",
+    1,
+    "")
